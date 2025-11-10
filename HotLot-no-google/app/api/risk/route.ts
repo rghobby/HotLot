@@ -1,0 +1,1 @@
+export async function GET(){ return Response.json({risk:0.4,notes:['placeholder']}); }
