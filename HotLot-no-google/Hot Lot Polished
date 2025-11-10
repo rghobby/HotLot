@@ -1,0 +1,55 @@
+# HotLot — Polished MVP
+
+Tagline: Buy Smarter
+One-liner: Tell us your property dream and we'll fast track it.
+
+Deploy: Import this repo to Vercel and click Deploy. No API keys required.
+
+{"version": 2, "builds": [{"src": "package.json", "use": "@vercel/next"}]}
+/// <reference types="next" />
+/// <reference types="next/image-types/global" />
+
+import type { Config } from "tailwindcss";
+const config: Config = {
+  content: ["./app/**/*.{ts,tsx}", "./components/**/*.{ts,tsx}"],
+  theme: { extend: { colors: { brand: { navy:"#0F172A", teal:"#0EA5A4", coral:"#FF6B6B", bg:"#F8FAFC" } } } },
+  plugins: [],
+};
+export default config;
+
+module.exports={plugins:{tailwindcss:{},autoprefixer:{}}}
+{
+  "compilerOptions": {
+    "target": "ES2020","lib": ["dom","dom.iterable","esnext"],"allowJs": false,"skipLibCheck": true,"strict": true,
+    "forceConsistentCasingInFileNames": true,"noEmit": true,"esModuleInterop": true,"module": "esnext","moduleResolution": "bundler",
+    "resolveJsonModule": true,"isolatedModules": true,"jsx": "preserve","incremental": true, "paths": { "@/*": ["./*"] }
+  },
+  "include": ["next-env.d.ts","**/*.ts","**/*.tsx"],"exclude":["node_modules"]
+}
+
+export default { experimental: { typedRoutes: true } };
+{
+  "name": "hotlot",
+  "version": "0.2.0",
+  "private": true,
+  "scripts": {
+    "dev": "next dev",
+    "build": "next build",
+    "start": "next start"
+  },
+  "dependencies": {
+    "next": "14.2.11",
+    "react": "18.3.1",
+    "react-dom": "18.3.1",
+    "clsx": "2.1.1",
+    "tailwind-merge": "2.5.2"
+  },
+  "devDependencies": {
+    "autoprefixer": "10.4.19",
+    "postcss": "8.4.41",
+    "tailwindcss": "3.4.10",
+    "typescript": "5.6.3",
+    "@types/react": "18.3.5",
+    "@types/node": "22.7.4"
+  }
+}
